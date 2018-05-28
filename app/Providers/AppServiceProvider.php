@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace ProyectoAppEducativa\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;

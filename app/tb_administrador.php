@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace ProyectoAppEducativa;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Notifications\AdminResetPasswordNotification;
+use ProyectoAppEducativa\Notifications\AdminResetPasswordNotification;
 
 class tb_administrador extends Authenticatable
 {

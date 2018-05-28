@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace ProyectoAppEducativa\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use ProyectoAppEducativa\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 use Password;

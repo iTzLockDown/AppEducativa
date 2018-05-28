@@ -15,9 +15,14 @@ class CreateTbAdministradorsTable extends Migration
     {
         Schema::create('tb_administradors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('job_tittle');
+            $table->string('nombre',20)->nullable(false);
+            $table->string('apellidop',20)->nullable(false);
+            $table->string('apellidom',20)->nullable(false);
+            $table->string('documento',20)->unique();
+            $table->string('direccion',30);
+            $table->string('celular',9)->unique();
+            $table->char('tipo_adm',2);
+            $table->string('email',50)->unique();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

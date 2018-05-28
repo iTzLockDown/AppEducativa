@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace ProyectoAppEducativa\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use ProyectoAppEducativa\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Auth;
 
