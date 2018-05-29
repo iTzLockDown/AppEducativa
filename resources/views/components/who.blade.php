@@ -8,6 +8,28 @@
     </p>
 
     @endif
+@if(Auth::guard('docente')->check())
+    <p class="text-success">
+        You are Logged In as  <strong>DOCENTE</strong>
+    </p>
+@else
+    <p class="text-danger">
+        You are Logged Out as <strong>DOCENTE</strong>
+    </p>
+
+@endif
+
+@if(Auth::guard('tutor')->check())
+    <p class="text-success">
+        You are Logged In as  <strong>TUTOR</strong>
+    </p>
+@else
+    <p class="text-danger">
+        You are Logged Out as <strong>TUTOR</strong>
+    </p>
+
+@endif
+
 
 @if(Auth::guard('admin')->check())
     <p class="text-success">

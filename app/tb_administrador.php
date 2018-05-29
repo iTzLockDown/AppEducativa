@@ -18,7 +18,7 @@ class tb_administrador extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','job_tittle',
+        'nombre', 'apellidop', 'apellidom','documento','direccion','celular','tipo_adm','email','password'
     ];
 
     /**

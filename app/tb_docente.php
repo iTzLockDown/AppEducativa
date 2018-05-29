@@ -11,14 +11,14 @@ class tb_docente extends Authenticatable
     use Notifiable;
 
 
-    protected $guard = 'admin';
+    protected $guard = 'docente';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','job_tittle',
+        'nombre', 'apellidop', 'apellidom','documento','direccion','celular','profecion','email','password',
     ];
 
     /**
@@ -32,6 +32,6 @@ class tb_docente extends Authenticatable
 
     public function sendPasswordResetNotification($token)
     {
-        $this->notify(new AdminResetPasswordNotification($token));
+        $this->notify(new DocenteResetPasswordNotification($token));
     }
 }

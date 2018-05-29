@@ -54,6 +54,22 @@ return [
             'driver' => 'token',
             'provider' => 'admins',
         ],
+        'docente' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'docente-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
+        'tutor' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'tutor-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+        ],
 
     ],
 
@@ -82,7 +98,17 @@ return [
 
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\tb_administrador::class,
+            'model' => ProyectoAppEducativa\tb_administrador::class,
+        ],
+
+        'docentes' => [
+            'driver' => 'eloquent',
+            'model' => ProyectoAppEducativa\tb_docente::class,
+        ],
+
+        'tutors' => [
+            'driver' => 'eloquent',
+            'model' => ProyectoAppEducativa\tb_tutor::class,
         ],
         // 'users' => [
         //     'driver' => 'database',
@@ -112,6 +138,16 @@ return [
             'expire' => 60,
         ],
         'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'docentes' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
+        'tutors' => [
             'provider' => 'admins',
             'table' => 'password_resets',
             'expire' => 15,
