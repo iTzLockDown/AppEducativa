@@ -56,19 +56,19 @@ return [
         ],
         'docente' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'docentes',
         ],
         'docente-api' => [
             'driver' => 'token',
-            'provider' => 'admins',
+            'provider' => 'docentes',
         ],
         'tutor' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'tutors',
         ],
         'tutor-api' => [
             'driver' => 'token',
-            'provider' => 'admins',
+            'provider' => 'tutors',
         ],
 
     ],

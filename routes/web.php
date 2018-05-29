@@ -60,3 +60,7 @@ Route::prefix('tutor')->group(function ()
 });
 
 
+
+Route::get('/', function () {
+    return view('welcome');
+});
