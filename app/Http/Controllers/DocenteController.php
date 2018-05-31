@@ -23,6 +23,6 @@ class DocenteController extends Controller
      */
     public function index()
     {
-        return view('docente');
+        return view('iDocente\home');
     }
 }

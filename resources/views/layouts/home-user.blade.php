@@ -55,11 +55,11 @@
             <ul class="nav navbar-nav navbar-right navbar-user">
                 <li class="dropdown user-dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Sesion<b class="caret"></b>
+                        {{ Auth::user()->nombre }} <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="">Configuracion</a></li>
-                        <li><a href="">Salir</a></li>
+                        <li><a href="{{ route('user.logout') }} ">Salir</a></li>
                     </ul>
             </ul>
 
