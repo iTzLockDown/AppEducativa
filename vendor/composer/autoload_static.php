@@ -317,6 +317,7 @@ class ComposerStaticInitdf7b5ff5f26d62b397a7dcbd253fe658
     );
 
     public static $classMap = array (
+        'AdminSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminSeeder.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -2695,12 +2696,20 @@ class ComposerStaticInitdf7b5ff5f26d62b397a7dcbd253fe658
         'ProyectoAppEducativa\\Http\\Controllers\\Auth\\AdminForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AdminForgotPasswordController.php',
         'ProyectoAppEducativa\\Http\\Controllers\\Auth\\AdminLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AdminLoginController.php',
         'ProyectoAppEducativa\\Http\\Controllers\\Auth\\AdminResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AdminResetPasswordController.php',
+        'ProyectoAppEducativa\\Http\\Controllers\\Auth\\DocenteForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/DocenteForgotPasswordController.php',
+        'ProyectoAppEducativa\\Http\\Controllers\\Auth\\DocenteLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/DocenteLoginController.php',
+        'ProyectoAppEducativa\\Http\\Controllers\\Auth\\DocenteResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/DocenteResetPasswordController.php',
         'ProyectoAppEducativa\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'ProyectoAppEducativa\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'ProyectoAppEducativa\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'ProyectoAppEducativa\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'ProyectoAppEducativa\\Http\\Controllers\\Auth\\TutorForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/TutorForgotPasswordController.php',
+        'ProyectoAppEducativa\\Http\\Controllers\\Auth\\TutorLoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/TutorLoginController.php',
+        'ProyectoAppEducativa\\Http\\Controllers\\Auth\\TutorResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/TutorResetPasswordController.php',
         'ProyectoAppEducativa\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'ProyectoAppEducativa\\Http\\Controllers\\DocenteController' => __DIR__ . '/../..' . '/app/Http/Controllers/DocenteController.php',
         'ProyectoAppEducativa\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'ProyectoAppEducativa\\Http\\Controllers\\TutorController' => __DIR__ . '/../..' . '/app/Http/Controllers/TutorController.php',
         'ProyectoAppEducativa\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'ProyectoAppEducativa\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'ProyectoAppEducativa\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',

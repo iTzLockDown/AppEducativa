@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AdminSeeder' => $baseDir . '/database/seeds/AdminSeeder.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -2384,12 +2385,20 @@ return array(
     'ProyectoAppEducativa\\Http\\Controllers\\Auth\\AdminForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/AdminForgotPasswordController.php',
     'ProyectoAppEducativa\\Http\\Controllers\\Auth\\AdminLoginController' => $baseDir . '/app/Http/Controllers/Auth/AdminLoginController.php',
     'ProyectoAppEducativa\\Http\\Controllers\\Auth\\AdminResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/AdminResetPasswordController.php',
+    'ProyectoAppEducativa\\Http\\Controllers\\Auth\\DocenteForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/DocenteForgotPasswordController.php',
+    'ProyectoAppEducativa\\Http\\Controllers\\Auth\\DocenteLoginController' => $baseDir . '/app/Http/Controllers/Auth/DocenteLoginController.php',
+    'ProyectoAppEducativa\\Http\\Controllers\\Auth\\DocenteResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/DocenteResetPasswordController.php',
     'ProyectoAppEducativa\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'ProyectoAppEducativa\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'ProyectoAppEducativa\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'ProyectoAppEducativa\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+    'ProyectoAppEducativa\\Http\\Controllers\\Auth\\TutorForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/TutorForgotPasswordController.php',
+    'ProyectoAppEducativa\\Http\\Controllers\\Auth\\TutorLoginController' => $baseDir . '/app/Http/Controllers/Auth/TutorLoginController.php',
+    'ProyectoAppEducativa\\Http\\Controllers\\Auth\\TutorResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/TutorResetPasswordController.php',
     'ProyectoAppEducativa\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'ProyectoAppEducativa\\Http\\Controllers\\DocenteController' => $baseDir . '/app/Http/Controllers/DocenteController.php',
     'ProyectoAppEducativa\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'ProyectoAppEducativa\\Http\\Controllers\\TutorController' => $baseDir . '/app/Http/Controllers/TutorController.php',
     'ProyectoAppEducativa\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'ProyectoAppEducativa\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
     'ProyectoAppEducativa\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',

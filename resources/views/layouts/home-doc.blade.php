@@ -39,6 +39,8 @@
                 <li><a href=""><i class="fa fa-home"></i>Mi Horario</a></li>
                 <li><a href=""><i class="fa fa-home"></i>Mis salones</a></li>
                 <li>  <a href=""><i class='fa fa-tasks'></i>Asistencia</a></li>
+                <li>  <a href=""><i class='fa fa-tasks'></i>Calificaciones</a></li>
+                <li>  <a href=""><i class='fa fa-tasks'></i>Comportamiento</a></li>
                 {{--                <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Listas <b class="caret"></b></a>
                                     <ul class="dropdown-menu">

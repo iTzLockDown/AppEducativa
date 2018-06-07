@@ -34,4 +34,12 @@ class tb_docente extends Authenticatable
     {
         $this->notify(new DocenteResetPasswordNotification($token));
     }
+    public function scopeBusqueda($query, $nombre)
+    {
+        if($nombre !="")
+        {
+            $query ->where('nombre','like',"%".$nombre."%");
+        }
+
+    }
 }

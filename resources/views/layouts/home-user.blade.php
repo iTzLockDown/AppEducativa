@@ -39,6 +39,7 @@
                 <li><a href=""><i class="fa fa-home"></i>Horario</a></li>
                 <li><a href=""><i class="fa fa-home"></i>Cursos</a></li>
                 <li>  <a href=""><i class='fa fa-tasks'></i>Asistencia</a></li>
+                <li>  <a href=""><i class='fa fa-tasks'></i>Comportamiento</a></li>
                 {{--                <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Listas <b class="caret"></b></a>
                                     <ul class="dropdown-menu">

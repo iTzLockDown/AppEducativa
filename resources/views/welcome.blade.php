@@ -72,6 +72,9 @@
             <a href="{{ route('login') }}">Estudiante</a>
         </div>
     </div>
+    <section>
+
+    </section>
 </div>
 </body>
 </html>

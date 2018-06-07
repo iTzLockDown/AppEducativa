@@ -1,86 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>AppEducativa</title>
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
+    <meta name="theme-color" content="#3e454c">
+    <link rel="shortcut icon" href="{{ URL::asset('img/icon.png') }}">
 
-    <!-- Add custom CSS here -->
+    <title>Panel de Administracion</title>
+
+    <!-- Font awesome -->
+{!!Html::style('css/font-awesome.min.css')!!}
+<!-- Sandstone Bootstrap CSS -->
+{!!Html::style('css/bootstrap.min.css')!!}
+<!-- Bootstrap Datatables -->
+{!!Html::style('css/dataTables.bootstrap.min.css')!!}
+<!-- Bootstrap social button library -->
+{!!Html::style('css/bootstrap-social.css')!!}
+<!-- Bootstrap select -->
+{!!Html::style('css/bootstrap-select.css')!!}
+<!-- Bootstrap file input -->
+{!!Html::style('css/fileinput.min.css')!!}
+<!-- Awesome Bootstrap checkbox -->
+{!!Html::style('css/awesome-bootstrap-checkbox.css')!!}
+<!-- Admin Stye -->
+    {!!Html::style('css/style.css')!!}
+
+
 
 </head>
 
 <body>
-
-<div id="wrapper">
-
-    <!-- Sidebar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="./">AppEducativa<sup><small><span class="label label-success"></span></small></sup> </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav side-nav">
-                <ul class="nav navbar-nav">
-                </ul>
-
-                <li><a href=""><i class="fa fa-home"></i>Docentes</a></li>
-                <li><a href=""><i class="fa fa-home"></i>Tutores</a></li>
-                <li>  <a href=""><i class='fa fa-tasks'></i> Cursos</a></li>
-{{--                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-square-o-down"></i> Listas <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">Asistencia</a></li>
-                        <li><a href="">Comportamiento</a></li>
-                        <li><a href="">Calificaciones</a></li>
-                    </ul>
-                </li>--}}
-
-                <li><a href=""><i class="fa fa-users"></i>Salones</a></li>
+<div class="brand clearfix">
+    <a href="#" class="logo"><img src="{{ URL::asset('img/logo.jpg') }}" class="img-responsive" alt=""></a>
+    <span class="menu-btn"><i class="fa fa-bars"></i></span>
+    <ul class="ts-profile-nav">
+        <li><a href="#"><i class="fa fa-commenting-o"></i> Ayuda</a></li>
+        <li class="ts-account">
+            <a href="#"><img src="{{ URL::asset('img/ts-avatar.jpg') }}" class="ts-avatar hidden-side" alt="">{{ Auth::user()->nombre }}  <i class="fa fa-angle-down hidden-side"></i></a>
+            <ul>
+                <li><a href=""><i class="fa fa-edit"> </i> Editar Perfil</a></li>
+                <li><a href=""><i class="fa fa-cog"></i> Cambiar Password</a></li>
+                <li><a href="{{ route('admin.logout') }}"><i class="fa fa-sign-out"></i> Salir</a></li>
             </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="ts-main-content">
+    <nav class="ts-sidebar">
+        <ul class="ts-sidebar-menu">
 
 
-            <ul class="nav navbar-nav navbar-right navbar-user">
-                <li class="dropdown user-dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        {{ Auth::user()->nombre }} <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">Configuracion</a></li>
-                        <li><a href="{{ route('admin.logout') }} ">Salir</a></li>
-                    </ul>
-            </ul>
 
-        </div>
+
+            <li class="ts-label">Principal</li>
+            <li class="open"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li><a href="{{ route('admin.dread') }}"><i class="fa fa-user"></i> Docentes</a></li>
+            <li><a href=""><i class="fa fa-user-md"></i> Tutores</a></li>
+            <li><a href="#"><i class="fa fa-users"></i> Cursos</a></li>
+            <li><a href="#"><i class="fa fa-institution"></i> Salones</a></li>
+        </ul>
     </nav>
-
-    <div id="page-wrapper">
+    <div class="content-wrapper">
+        <div class="container-fluid">
 
             @yield('content')
-        <hr>
-        <p></p>
 
-    </div><!-- /#page-wrapper -->
+        </div>
+    </div>
+</div>
 
-</div><!-- /#wrapper -->
+<!-- Loading Scripts -->
+{!!Html::script('js/app.js')!!}
+{!!Html::script('js/jquery.min.js')!!}
+{!!Html::script('js/bootstrap-select.min.js')!!}
+{!!Html::script('js/bootstrap.min.js')!!}
+{!!Html::script('js/jquery.dataTables.min.js')!!}
+{!!Html::script('js/dataTables.bootstrap.min.js')!!}
+{!!Html::script('js/Chart.min.js')!!}
+{!!Html::script('js/fileinput.js')!!}
+{!!Html::script('js/chartData.js')!!}
+{!!Html::script('js/main.js')!!}
 
-<!-- JavaScript -->
 
-<script src="{{ asset('js/jquery.min.js') }}" defer></script>
-<script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
+
 
 
 </body>
+
 </html>

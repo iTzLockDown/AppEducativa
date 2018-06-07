@@ -30,6 +30,15 @@ Route::prefix('admin')->group(function ()
     Route::get('/password/reset',  'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
     Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
     Route::get('/password/reset/{token}', 'Auth\AdminForgotPasswordController@showResetFrom')->name('admin.password.reset');
+
+    Route::get('/cdocente','AdminController@homeDocente')->name('admin.dread');
+    Route::get('/credocente','AdminController@cDocente')->name('admin.dcreate');
+    Route::get('/xdocente/edit/{id}','AdminController@cDocenteEdit')->name('admin.dedit');
+    Route::get('/xdocente/eliminar/{id}','AdminController@cDocenteDelete')->name('admin.ddelete');
+
+    Route::resource('/xdocente','cDocenteController');
+
+
 });
 
 Route::prefix('docente')->group(function ()
