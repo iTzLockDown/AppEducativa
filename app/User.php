@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function scopeBusqueda($query, $nombre)
+    {
+        if($nombre !="")
+        {
+            $query ->where('nombre','like',"%".$nombre."%");
+        }
+
+    }
 }

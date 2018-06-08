@@ -34,4 +34,12 @@ class tb_administrador extends Authenticatable
     {
         $this->notify(new AdminResetPasswordNotification($token));
     }
+    public function scopeBusqueda($query, $nombre)
+    {
+        if($nombre !="")
+        {
+            $query ->where('nombre','like',"%".$nombre."%");
+        }
+
+    }
 }

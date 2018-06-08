@@ -55,15 +55,14 @@
     <nav class="ts-sidebar">
         <ul class="ts-sidebar-menu">
 
-
-
-
             <li class="ts-label">Principal</li>
             <li class="open"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{ route('admin.dread') }}"><i class="fa fa-user"></i> Docentes</a></li>
-            <li><a href=""><i class="fa fa-user-md"></i> Tutores</a></li>
-            <li><a href="#"><i class="fa fa-users"></i> Cursos</a></li>
-            <li><a href="#"><i class="fa fa-institution"></i> Salones</a></li>
+            <li><a href="{{ route('admin.dread') }}"><i class="fa fa-user"></i>Docentes</a></li>
+            <li><a href="{{ route('admin.tread')}}"><i class="fa fa-user-md"></i>Tutores</a></li>
+            <li><a href="{{ route('admin.eread')}}"><i class="fa fa-institution"></i>Estudiantes</a></li>
+            <li><a href="{{ route('admin.cread')}}"><i class="fa fa-users"></i>Cursos</a></li>
+            <li><a href="{{ route('admin.sread')}}"><i class="fa fa-institution"></i>Salones</a></li>
+            <li><a href="{{ route('admin.aread')}}"><i class="fa fa-user-secret"></i>Administradores Generales</a></li>
         </ul>
     </nav>
     <div class="content-wrapper">

@@ -3,6 +3,7 @@
 namespace ProyectoAppEducativa\Http\Controllers;
 
 use Illuminate\Http\Request;
+use ProyectoAppEducativa\User;
 
 class TutorController extends Controller
 {
@@ -23,6 +24,8 @@ class TutorController extends Controller
      */
     public function index()
     {
-        return view('iTutor\home');
+        $est = User::all();
+        return view('ATutor\principal', compact('est'));
     }
+
 }

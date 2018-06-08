@@ -3,11 +3,11 @@
 namespace ProyectoAppEducativa\Http\Controllers;
 
 use Illuminate\Http\Request;
-use ProyectoAppEducativa\tb_docente;
+use ProyectoAppEducativa\tb_salon;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
-class cDocenteController extends Controller
+class cSalonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,21 +37,22 @@ class cDocenteController extends Controller
      */
     public function store(Request $request)
     {
-        $cdocente = new tb_docente;
-        $cdocente ->nombre       = $request->nombre;
-        $cdocente ->apellidop    = $request->apellidop;
-        $cdocente ->apellidom    = $request->apellidom;
-        $cdocente ->documento    = $request->documento;
-        $cdocente ->direccion    = $request->direccion;
-        $cdocente ->celular        = $request->celular;
-        $cdocente ->profecion     = $request->profecion;
-        $cdocente ->email      = $request->email;
-        $cdocente ->password     = bcrypt($request->email);
-        $cdocente -> save();
+        $csalon = new tb_salon;
+        $csalon ->codigo       = $request->codigo;
+        $csalon ->horario    = $request->horario;
+        $csalon ->horario1    = $request->horario;
+        $csalon ->horario2    = $request->horario;
+        $csalon ->dia    = $request->dia;
+        $csalon ->dia1    = $request->dia;
+        $csalon ->dia2    = $request->dia;
+        $csalon ->ambiente    = $request->ambiente;
+        $csalon ->curso    = $request->curso;
+        $csalon ->docente    = $request->docente;
 
-        Session::flash('message', 'Docente registrado correctamente.');
-        return Redirect::route('admin.dread');
+        $csalon -> save();
 
+        Session::flash('message', 'Salon registrado correctamente.');
+        return Redirect::route('admin.sread');
     }
 
     /**
@@ -85,22 +86,7 @@ class cDocenteController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $edocente =tb_docente::find($id);
-        $edocente ->nombre       = $request->nombre;
-        $edocente ->apellidop    = $request->apellidop;
-        $edocente ->apellidom    = $request->apellidom;
-        $edocente ->documento    = $request->documento;
-        $edocente ->direccion    = $request->direccion;
-        $edocente ->celular        = $request->celular;
-        $edocente ->profecion     = $request->profecion;
-        $edocente ->email      = $request->email;
-        $edocente ->password     = bcrypt($request->email);
-        $edocente -> save();
-
-        Session::flash('message', 'Docente actualizado correctament.');
-        return Redirect::route('admin.dread');
-
+        //
     }
 
     /**
@@ -111,6 +97,6 @@ class cDocenteController extends Controller
      */
     public function destroy($id)
     {
-        return "hola mundo";
+        //
     }
 }

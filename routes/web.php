@@ -31,13 +31,49 @@ Route::prefix('admin')->group(function ()
     Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
     Route::get('/password/reset/{token}', 'Auth\AdminForgotPasswordController@showResetFrom')->name('admin.password.reset');
 
+    /*ROUTE ADMINISTRADORES*/
+    Route::get('/cadministrador','AdminController@homeAdministrador')->name('admin.aread');
+    Route::get('/creadministrador','AdminController@cAdministrador')->name('admin.acreate');
+    Route::get('/xadministrador/edit/{id}','AdminController@cAdministradorEdit')->name('admin.aedit');
+    Route::get('/xadministrador/eliminar/{id}','AdminController@cAdministradorDelete')->name('admin.adelete');
+    Route::resource('/xadministrador','cAdministradorController');
+
+    /*ROUTE DOCENTES*/
     Route::get('/cdocente','AdminController@homeDocente')->name('admin.dread');
     Route::get('/credocente','AdminController@cDocente')->name('admin.dcreate');
     Route::get('/xdocente/edit/{id}','AdminController@cDocenteEdit')->name('admin.dedit');
     Route::get('/xdocente/eliminar/{id}','AdminController@cDocenteDelete')->name('admin.ddelete');
-
     Route::resource('/xdocente','cDocenteController');
 
+    /*ROUTE TUTORES*/
+
+    Route::get('/ctutor','AdminController@homeTutor')->name('admin.tread');
+    Route::get('/cretutor','AdminController@cTutor')->name('admin.tcreate');
+    Route::get('/xtutor/edit/{id}','AdminController@cTutorEdit')->name('admin.tedit');
+    Route::get('/xtutor/eliminar/{id}','AdminController@cTutorDelete')->name('admin.tdelete');
+    Route::resource('/xtutor','cTutorController');
+
+    /*ROUTE ESTUDIANTES*/
+
+    Route::get('/cestudiante','AdminController@homeEstudiante')->name('admin.eread');
+    Route::get('/creestudiante','AdminController@cEstudiante')->name('admin.ecreate');
+    Route::get('/xestudiante/edit/{id}','AdminController@cEstudianteEdit')->name('admin.eedit');
+    Route::get('/xestudiante/eliminar/{id}','AdminController@cEstudianteDelete')->name('admin.edelete');
+    Route::resource('/xestudiante','cEstudianteController');
+
+    /*ROUTE CURSOS*/
+    Route::get('/ccurso','AdminController@homeCurso')->name('admin.cread');
+    Route::get('/crecurso','AdminController@cCurso')->name('admin.ccreate');
+    Route::get('/xcurso/edit/{id}','AdminController@cCursoEdit')->name('admin.cedit');
+    Route::get('/xcurso/eliminar/{id}','AdminController@cCursoDelete')->name('admin.cdelete');
+    Route::resource('/xcurso','cCursoController');
+
+    /*ROUTE SALONES*/
+    Route::get('/csalon','AdminController@homeSalon')->name('admin.sread');
+    Route::get('/cresalon','AdminController@cSalon')->name('admin.screate');
+    Route::get('/xsalon/edit/{id}','AdminController@cSalonEdit')->name('admin.sedit');
+    Route::get('/xsalon/eliminar/{id}','AdminController@cSalonDelete')->name('admin.sdelete');
+    Route::resource('/xsalon','cSalonController');
 
 });
 
@@ -53,6 +89,8 @@ Route::prefix('docente')->group(function ()
     Route::post('/password/reset', 'Auth\DocenteResetPasswordController@reset');
     Route::get('/password/reset/{token}', 'Auth\DocenteForgotPasswordController@showResetFrom')->name('docente.password.reset');
 
+    Route::get('/msalon', 'DocenteController@dSalon')->name('docente.sread');
+
 });
 
 Route::prefix('tutor')->group(function ()
@@ -66,6 +104,12 @@ Route::prefix('tutor')->group(function ()
     Route::get('/password/reset',  'Auth\TutorForgotPasswordController@showLinkRequestForm')->name('tutor.password.request');
     Route::post('/password/reset', 'Auth\TutorResetPasswordController@reset');
     Route::get('/password/reset/{token}', 'Auth\TutorForgotPasswordController@showResetFrom')->name('tutor.password.reset');
+
+
+    Route::get('/iestudiante','tTutorController@index')->name('tutor.eread');
+
+
+
 });
 
 
