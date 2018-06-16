@@ -63,6 +63,7 @@
             <li><a href="{{ route('admin.cread')}}"><i class="fa fa-users"></i>Cursos</a></li>
             <li><a href="{{ route('admin.sread')}}"><i class="fa fa-institution"></i>Salones</a></li>
             <li><a href="{{ route('admin.aread')}}"><i class="fa fa-user-secret"></i>Administradores Generales</a></li>
+
         </ul>
     </nav>
     <div class="content-wrapper">

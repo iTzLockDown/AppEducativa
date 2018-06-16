@@ -98,7 +98,7 @@ class cDocenteController extends Controller
         $edocente ->password     = bcrypt($request->email);
         $edocente -> save();
 
-        Session::flash('message', 'Docente actualizado correctament.');
+        Session::flash('message', 'Docente actualizado correctamente.');
         return Redirect::route('admin.dread');
 
     }

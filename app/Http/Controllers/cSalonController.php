@@ -43,8 +43,8 @@ class cSalonController extends Controller
         $csalon ->horario1    = $request->horario;
         $csalon ->horario2    = $request->horario;
         $csalon ->dia    = $request->dia;
-        $csalon ->dia1    = $request->dia;
-        $csalon ->dia2    = $request->dia;
+        $csalon ->dia1    = $request->dia1;
+        $csalon ->dia2    = $request->dia2;
         $csalon ->ambiente    = $request->ambiente;
         $csalon ->curso    = $request->curso;
         $csalon ->docente    = $request->docente;
@@ -86,7 +86,22 @@ class cSalonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $esalon = new tb_salon;
+        $esalon ->codigo       = $request->codigo;
+        $esalon ->horario    = $request->horario;
+        $esalon ->horario1    = $request->horario;
+        $esalon ->horario2    = $request->horario;
+        $esalon ->dia    = $request->dia;
+        $esalon ->dia1    = $request->dia1;
+        $esalon ->dia2    = $request->dia2;
+        $esalon ->ambiente    = $request->ambiente;
+        $esalon ->curso    = $request->curso;
+        $esalon ->docente    = $request->docente;
+
+        $esalon -> save();
+
+        Session::flash('message', 'Salon actualizado correctamente.');
+        return Redirect::route('admin.sread');
     }
 
     /**

@@ -72,8 +72,9 @@
 
                             </td>
                             <td>
+                                {!!link_to_route('admin.mread', $title = 'Matricular', $parameters = $salones->id, $attributes = ['class'=>'btn btn-success btn-sm '])!!}
                                 {!!link_to_route('admin.sedit', $title = 'Editar', $parameters = $salones->id, $attributes = ['class'=>'btn btn-info btn-sm '])!!}
-                                <a href="{{ route('admin.sdelete' ,$parameters = $salones->id)}}" onclick="return confirm('Esta seguro de eliminar el Tutor')" class="btn btn-warning btn-sm" title="Eliminar"> <i class="fa fa-close"></i> </a>
+                                <a href="{{ route('admin.sdelete' ,$parameters = $salones->id)}}" onclick="return confirm('Esta seguro de eliminar el Salon')" class="btn btn-warning btn-sm" title="Eliminar"> <i class="fa fa-close"></i> </a>
                             </td>
                         </tr>
                         <?php endforeach; ?>

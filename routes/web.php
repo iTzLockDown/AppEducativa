@@ -20,6 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout','Auth\LoginController@userLogout')->name('user.logout');
 
+Route::get('/readcurso', 'HomeController@rCurso')->name('rcurso');
+
 Route::prefix('admin')->group(function ()
 {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
@@ -75,6 +77,13 @@ Route::prefix('admin')->group(function ()
     Route::get('/xsalon/eliminar/{id}','AdminController@cSalonDelete')->name('admin.sdelete');
     Route::resource('/xsalon','cSalonController');
 
+    /*ROUTE MATRICULA*/
+    Route::get('/cmatricula/{id}','AdminController@homeMatricula')->name('admin.mread');
+    Route::get('/cmatricular/{id}','AdminController@homeMatricular')->name('admin.matread');
+
+    Route::get('/xmatricula/{est}/salon/{salon}','AdminController@homeMatricularCre')->name('admin.matcreate');
+    Route::get('/xdmatricular/{est}','AdminController@homeMatricularDel')->name('admin.matdel');
+
 });
 
 Route::prefix('docente')->group(function ()
@@ -90,6 +99,7 @@ Route::prefix('docente')->group(function ()
     Route::get('/password/reset/{token}', 'Auth\DocenteForgotPasswordController@showResetFrom')->name('docente.password.reset');
 
     Route::get('/msalon', 'DocenteController@dSalon')->name('docente.sread');
+    Route::get('/asissalon/{id}', 'DocenteController@AsistSalon')->name('docente.saread');
 
 });
 

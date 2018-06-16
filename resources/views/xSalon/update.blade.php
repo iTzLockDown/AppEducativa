@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-12">
 
-            <h2 class="page-title">Registro docente</h2>
+            <h2 class="page-title">Actualizar Salon</h2>
         </div>
     </div>
 
@@ -14,69 +14,114 @@
             <div class="panel panel-success">
                 <div class="panel-heading">Formulario</div>
                 <div class="panel-body">
-                    {!!Form::model($tutor,['route'=>['xtutor.update', $tutor->id],'method'=>'PUT','role'=>'form','enctype'=>'multipart/form-data', 'class'=>'form-horizontal'])!!}
+                    {!!Form::model($salon,['route'=>['xsalon.update', $salon->id],'method'=>'PUT','role'=>'form','enctype'=>'multipart/form-data', 'class'=>'form-horizontal'])!!}
                     <div class="form-group">
-                        <label for="inputPassword1" class="col-lg-2 control-label">Nombre</label>
+                        <label for="inputPassword1" class="col-lg-2 control-label">Codigo salon</label>
                         <div class="col-lg-10">
-                            {!!Form::text('nombre',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' Nombres ','class'=>'form-control'])!!}
+                            {!!Form::text('codigo',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' Nombres ','class'=>'form-control'])!!}
                         </div>
 
                     </div>
-
+                    <div class="hr-dashed"></div>
                     <div class="form-group">
-                        <label for="inputPassword1" class="col-lg-2 control-label">Apellido Paterno</label>
+                        <label for="inputPassword1" class="col-lg-2 control-label">Dia 1</label>
                         <div class="col-lg-4">
-                            {!!Form::text('apellidop',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' Apellido Paterno','class'=>'form-control'])!!}
+                            {{ Form::select('dia', [
+                               'Lunes' => 'Lunes',
+                               'Martes' => 'Martes',
+                               'Miercoles' => 'Miercoles',
+                               'Jueves' => 'Jueves',
+                               'Viernes' => 'Viernes',
+                               'Sabado' => 'Sabado',
+                               'Domingo' => 'Domingo',$salon->dia]
+                            ,$attributes = array(),array('class' => 'selectpicker', 'data-selected-text-format'=>'count')) }}
                         </div>
 
-                        <label for="inputPassword1" class="col-lg-2 control-label">Apellido Materno</label>
+                        <label for="inputPassword1" class="col-lg-2 control-label">Horario 1</label>
                         <div class="col-lg-4">
-                            {!!Form::text('apellidom',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' Apellido Materno','class'=>'form-control'])!!}
+                            {!!Form::text('horario',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' hora','class'=>'form-control'])!!}
                         </div>
 
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword1" class="col-lg-2 control-label">Documento</label>
-                        <div class="col-lg-4">
-                            {!!Form::text('documento',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' Documento Nacional de Identidad','class'=>'form-control'])!!}
-                        </div>
-
-                        <label for="inputPassword1" class="col-lg-2 control-label">Direccion</label>
-                        <div class="col-lg-4">
-                            {!!Form::text('direccion',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' Direccion','class'=>'form-control'])!!}
-                        </div>
                     </div>
 
                     <div class="hr-dashed"></div>
                     <div class="form-group">
-                        <label for="inputPassword1" class="col-lg-2 control-label">Relación</label>
+                        <label for="inputPassword1" class="col-lg-2 control-label">Dia 2</label>
                         <div class="col-lg-4">
-                            {!!Form::text('relacion',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>'Profesión','class'=>'form-control'])!!}
+                            {{ Form::select('dia1', [
+                               'Lunes' => 'Lunes',
+                               'Martes' => 'Martes',
+                               'Miercoles' => 'Miercoles',
+                               'Jueves' => 'Jueves',
+                               'Viernes' => 'Viernes',
+                               'Sabado' => 'Sabado',
+                               'Domingo' => 'Domingo',$salon->dia1]
+                            ,$attributes = array(),array('class' => 'selectpicker', 'title'=>'Seleccionar...','data-selected-text-format'=>'count')) }}
                         </div>
 
-                        <label for="inputPassword1" class="col-lg-2 control-label">Celular</label>
+                        <label for="inputPassword1" class="col-lg-2 control-label">Horario 2</label>
                         <div class="col-lg-4">
-                            {!!Form::text('celular',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>'Celular','class'=>'form-control'])!!}
+                            {!!Form::text('horario2',null,['autocomplete'=>'off', 'placeholder' =>' Apellido Materno','class'=>'form-control'])!!}
                         </div>
+
+                    </div>
+                    <div class="hr-dashed"></div>
+
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 control-label">Dia 3</label>
+                        <div class="col-lg-4">
+                            <div class="col-lg-4">
+                                {{ Form::select('dia2', [
+                                   'Lunes' => 'Lunes',
+                                   'Martes' => 'Martes',
+                                   'Miercoles' => 'Miercoles',
+                                   'Jueves' => 'Jueves',
+                                   'Viernes' => 'Viernes',
+                                   'Sabado' => 'Sabado',
+                                   'Domingo' => 'Domingo',$salon->dia3]
+                                ,$attributes = array(),array('class' => 'selectpicker', 'title'=>'Seleccionar...','data-selected-text-format'=>'count')) }}
+                            </div>
+                        </div>
+
+                        <label for="inputPassword1" class="col-lg-2 control-label">Horario 3</label>
+                        <div class="col-lg-4">
+                            {!!Form::text('horario3',null,['autocomplete'=>'off', 'placeholder' =>' Apellido Materno','class'=>'form-control'])!!}
+                        </div>
+
+                    </div>
+                    <div class="hr-dashed"></div>
+                    <div class="form-group">
+                        <label for="inputPassword1" class="col-lg-2 control-label">Ambiente</label>
+                        <div class="col-lg-4">
+                            {!!Form::text('ambiente',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' Amibnete o eficio','class'=>'form-control'])!!}
+                        </div>
+
+                        <label for="inputPassword1" class="col-lg-2 control-label">Curso</label>
+                        <div class="col-lg-4">
+                            {!!Form::select('curso',$curso,null)!!}</div>
                     </div>
 
                     <div class="hr-dashed"></div>
                     <div class="form-group">
-                        <label for="inputPassword1" class="col-lg-2 control-label">Email</label>
+                        <label for="inputPassword1" class="col-lg-2 control-label">Docente</label>
                         <div class="col-lg-10">
-                            {!!Form::email('email',null,['required'=>' ', 'autocomplete'=>'off', 'placeholder' =>' Ejemplo@ejemplo.com','class'=>'form-control'])!!}
-                        </div>
+
+                            {!!Form::select('docente',$doc,null)!!}</div>
+
                     </div>
+
+
+
+
 
                     <div class="hr-dashed"></div>
                     <div class="form-group">
                         <div class="col-sm-8 col-sm-offset-2">
-                            <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-pencil-square-o"></i> Editar</button>
-                            <a href="{{route('admin.dread')}}" class="btn btn-danger btn-sm"> Cancel <i class=" fa fa-fast-forward"></i> </a>
+                            <button class="btn btn-primary btn-sm" type="submit"><i class="fa fa-pencil-square-o"></i> Actualizar</button>
+                            <a href="{{route('admin.sread')}}" class="btn btn-danger btn-sm"> Cancel <i class=" fa fa-fast-forward"></i> </a>
 
                         </div>
                     </div>
-
                     {!!Form::close()!!}
 
                 </div>

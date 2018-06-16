@@ -3,6 +3,9 @@
 namespace ProyectoAppEducativa\Http\Controllers;
 
 use Illuminate\Http\Request;
+use ProyectoAppEducativa\tb_cursos;
+use ProyectoAppEducativa\tb_matricula;
+use ProyectoAppEducativa\tb_salon;
 
 class HomeController extends Controller
 {
@@ -24,5 +27,12 @@ class HomeController extends Controller
     public function index()
     {
         return view('iEstudiante\home');
+    }
+    public function rCurso()
+    {
+        $mat = tb_matricula::all();
+        $salon = tb_salon::all();
+        $curso = tb_cursos::all();
+        return view('iEstudiante.curso', compact('mat', 'salon', 'curso'));
     }
 }

@@ -4,7 +4,11 @@ namespace ProyectoAppEducativa\Http\Controllers;
 
 use Illuminate\Http\Request;
 use ProyectoAppEducativa\tb_cursos;
+use ProyectoAppEducativa\tb_docente;
+use ProyectoAppEducativa\tb_matricula;
 use ProyectoAppEducativa\tb_salon;
+use ProyectoAppEducativa\User;
+
 
 class DocenteController extends Controller
 {
@@ -32,5 +36,15 @@ class DocenteController extends Controller
         $salon = tb_salon::all();
         $curso = tb_cursos::all();
         return view('ADocente\principal', compact('salon', 'curso'));
+    }
+    public  function  AsistSalon($id)
+    {
+        $salon = tb_salon::find($id);
+        $doc = tb_docente::all();
+        $curso = tb_cursos::all();
+        $matricula = tb_matricula::all();
+        $estudiante = User::all();
+        return view('ADocente\asistencia', compact('matricula','salon', 'doc', 'curso', 'estudiante'));
+
     }
 }

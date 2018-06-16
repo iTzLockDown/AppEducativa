@@ -1,9 +1,14 @@
 @extends('layouts.home-doc')
-
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <h2 class="page-title">Panel de administracion: Mis Salones</h2>
+            <h4 class="page-title">Codigo: {{$salon->codigo}}</h4>
+            <h4 class="page-title">Salon: <?php foreach ($curso as $cursos):?>
+                @if($salon->curso == $cursos->id)
+                    {{$cursos->nombre}}
+                @endif
+                <?php endforeach;?></h4>
+
         </div>
     </div>
     @if(Session::has('message'))
@@ -17,14 +22,14 @@
 
     <div class="panel panel-info" >
         <div class="panel-heading">
-            <h3 class="panel-title">Salones</h3>
+            <h3 class="panel-title">Asistencia</h3>
         </div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
                     <div class="" align="left">
 
-                        {!!Form::open(['route'=>'tutor.eread','method'=>'GET','role'=>'form','enctype'=>'multipart/form-data','files' => true])!!}
+                        {!!Form::open(['route'=>'admin.eread','method'=>'GET','role'=>'form','enctype'=>'multipart/form-data','files' => true])!!}
 
                         <div class="col-lg-4">
                             <input type="text" id="txtBuscar" name="nombre" class="form-control" placeholder="Buscar ..." autocomplete="off">
@@ -33,11 +38,11 @@
                             <button class="btn btn-tumblr btn-sm" id="btnBuscar" type="submit"><i class="fa fa-search"></i> Buscar</button>
                         </div>
                         <div class="col-lg-3">
-
                         </div>
                         {!!Form::close()!!}
                         <div class="col-lg-2">
-                         </div>
+                            {!!link_to_route('admin.matread', $title = 'Matricular', $parameters = $salon->id, $attributes = ['class'=>'btn btn-success btn-sm '])!!}
+                        </div>
                     </div>
                     <br>
                     <br>
@@ -45,39 +50,32 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Codigo</th>
                             <th>Nombre</th>
-                            <th>Dias</th>
                             <th colspan="2"></th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php foreach ($salon as $salones):?>
-                        <tr>
-                            @if($salones->docente == Auth::user()->id)
+                        <?php foreach ($matricula as $mat):?>
+                        @if($mat->salon ==$salon->id)
 
+                            <tr>
+                                <td>{{$mat->id}}</td>
+                                <td>
+                                    @foreach ($estudiante as $est)
+                                        @if($mat->estudiantes == $est->id)
+                                            {{ $est->apellidop }} {{ $est->apellidom }}, {{ $est->nombre }}
+                                        @endif
+                                    @endforeach
 
-
-                                <td>{{$salones->id}}</td>
-                                <td>{{$salones->codigo}} </td>
-                                <td><?php foreach ($curso as $cursos):?>
-                                    @if($salones->curso == $cursos->id)
-                                        {{$cursos->nombre}}
-                                    @endif
-                                    <?php endforeach;?>
-                                </td>
-                                <td>{{$salones->dia}}, {{$salones->dia1}}, {{$salones->dia2}} </td>
-                                <td>{!!link_to_route('docente.saread', $title = 'Asistencia', $parameters = $salones->id, $attributes = ['class'=>'btn btn-success btn-sm '])!!}
-                                    {!!link_to_route('docente.saread', $title = 'Notas', $parameters = $salones->id, $attributes = ['class'=>'btn btn-default btn-sm '])!!}
-                                    {!!link_to_route('docente.saread', $title = 'Comportamiento', $parameters = $salones->id, $attributes = ['class'=>'btn btn-info btn-sm '])!!}
-                                    {!!link_to_route('docente.saread', $title = 'Horario', $parameters = $salones->id, $attributes = ['class'=>'btn btn-danger btn-sm '])!!}
 
                                 </td>
                                 <td>
+                                    <a href=""  class="btn btn-vk btn-sm" onclick="CambioClase()" id="btnChange" title="Asistio"> <i class="fa fa-check-circle"></i> Asistio</a>
                                 </td>
-                             @endif
-                        </tr>
+                            </tr>
+                        @endif
                         <?php endforeach; ?>
+
                         </tbody>
                     </table>
 
@@ -87,4 +85,3 @@
     </div>
 
 @stop
-

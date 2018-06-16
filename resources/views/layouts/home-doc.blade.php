@@ -60,7 +60,7 @@
 
             <li class="ts-label">Principal</li>
             <li class="open"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-            <li><a href="{{ route('admin.dread') }}"><i class="fa fa-user"></i>Mi horario</a></li>
+            <li><a href="{{route('docente.sread')}}"><i class="fa fa-user"></i>Mi horario</a></li>
             <li><a href="{{route('docente.sread')}}"><i class="fa fa-user-md"></i>Mis salones</a></li>
             <li><a href="#"><i class="fa fa-users"></i>Asistencia</a></li>
             <li><a href="#"><i class="fa fa-institution"></i>Calificaciones</a></li>
@@ -79,6 +79,7 @@
 
 <!-- Loading Scripts -->
 {!!Html::script('js/app.js')!!}
+{!!Html::script('js/myscript.js')!!}
 {!!Html::script('js/jquery.min.js')!!}
 {!!Html::script('js/bootstrap-select.min.js')!!}
 {!!Html::script('js/bootstrap.min.js')!!}

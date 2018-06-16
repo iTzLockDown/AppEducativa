@@ -1,0 +1,4 @@
+function CambioClase()
+{
+    alert('Asistio')
+}

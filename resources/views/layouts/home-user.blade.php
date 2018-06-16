@@ -61,7 +61,7 @@
             <li class="ts-label">Principal</li>
             <li class="open"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
             <li><a href="{{ URL::to('noticia') }}"><i class="fa fa-newspaper-o"></i>Horario</a></li>
-            <li><a href="{{ URL::to('descripcion') }}"><i class="fa fa-file-text-o"></i>Cursos</a></li>
+            <li><a href="{{route('rcurso')}}"><i class="fa fa-file-text-o"></i>Cursos</a></li>
             <li><a href="#"><i class="fa fa-edit"></i>Asistencia</a></li>
             <li><a href="#"><i class="fa fa-edit"></i>Notas</a></li>
 

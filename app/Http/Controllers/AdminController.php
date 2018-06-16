@@ -8,6 +8,7 @@ use ProyectoAppEducativa\tb_cursos;
 use ProyectoAppEducativa\tb_docente;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
+use ProyectoAppEducativa\tb_matricula;
 use ProyectoAppEducativa\tb_salon;
 use ProyectoAppEducativa\tb_tutor;
 use ProyectoAppEducativa\User;
@@ -102,6 +103,7 @@ class AdminController extends Controller
     {
         $est = User::Busqueda($request->get('nombre'))->orderBy('id', 'DESC')->paginate(5);
         return view('xEstudiante\principal', compact('est'));
+
     }
 
     public function cEstudiante()
@@ -186,9 +188,10 @@ class AdminController extends Controller
     {
 
         $e_salon =tb_salon::find($id);
+        $curso = tb_cursos::pluck('nombre', 'id');
+        $doc= tb_docente::pluck('documento', 'id');
 
-
-        return view('xSalon.update',['salon'=>$e_salon]);
+        return view('xSalon.update',['salon'=>$e_salon], compact('curso', 'doc'));
     }
 
     public  function cSalonDelete($id)
@@ -231,5 +234,42 @@ class AdminController extends Controller
         $delete->delete();
         Session::flash('message', 'Administrador eliminado exitosamente.!');
         return Redirect::route('admin.aread');
+    }
+
+    public function homeMatricula($id)
+    {
+        $salon = tb_salon::find($id);
+        $doc = tb_docente::all();
+        $curso = tb_cursos::all();
+        $matricula = tb_matricula::all();
+        $estudiante = User::all();
+        return view('xMatricula\principal', compact('matricula','salon', 'doc', 'curso', 'estudiante'));
+    }
+    public function homeMatricular($id)
+    {
+        $salon = tb_salon::find($id);
+        $doc = tb_docente::all();
+        $curso = tb_cursos::all();
+        $matricula = tb_matricula::all();
+        $estudiante = User::all();
+        return view('xMatricula\matricular', compact('matricula','salon', 'doc', 'curso', 'estudiante'));
+    }
+
+    public function homeMatricularCre($id, $id2)
+    {
+        $cmatricula = new tb_matricula();
+        $deg = $id.$id2;
+        $cmatricula ->deg     = $deg;
+        $cmatricula ->salon      = $id2;
+        $cmatricula ->estudiantes     = $id;
+        $cmatricula -> save();
+
+        return Redirect::back()->with('message', 'Estudiante matriculado.');
+    }
+    public function homeMatricularDel($id)
+    {
+        $delete = tb_matricula::find($id);
+        $delete->delete();
+        return Redirect::back()->with('message', 'Estudiante desmatriculado.');
     }
 }
